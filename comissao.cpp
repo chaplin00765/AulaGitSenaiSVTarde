@@ -1,6 +1,16 @@
 #include <iostream>
 using namespace std;
 
+double calculaComissao(double vlVenda, double txComissao)
+{
+	return vlVenda * txComissao;
+}
+void mostraResultado(string nome, double comissao){
+
+	cout << "vendedor: " << nome << endl;
+	cout << "comissao: R$ " << comissao << endl;
+	
+}
 int main() {
 	
 	string nome;
@@ -14,7 +24,9 @@ int main() {
 	cout << "\ndigite o valor de venda: ";
 	cin >> valorVenda;
 	
-	comissao = valorVenda * TaxaComissao;
+	comissao = calculaComissao(valorVenda, TaxaComissao);
+	
+	mostraResultado(nome, comissao);
 	
 	cout << "\nvendedor: " << nome;
 	cout << "\ncomisso: R$ " << comissao;
